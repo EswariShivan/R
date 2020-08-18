@@ -30,7 +30,7 @@ covid_df_all_states_daily <- covid_df_all_states %>%
   select(Date, Country_Region, active, hospitalizedCurr, daily_tested, daily_positive)
 
 
-#NOW------------------Top 10 records
+#------------------Top 10 records
 # 1. How can we get the overall number of COVID-19 tested, positive, 
 #active and hospitalized cases by country since we currently have daily data? - Group
 # 2. How do we then extract the top ten? - Summarize
@@ -52,7 +52,6 @@ covid_top_10 <- head(covid_df_all_states_daily_sum,10)
 
 
 
-#Now
 # Which countries have had the highest 
 #number of positive cases against the number of tests?
 countries <- covid_top_10$Country_Region
@@ -80,7 +79,7 @@ colnames(covid_mat) <- c("Ratio", "tested", "positive", "active", "hospitalized"
 
 covid_mat
 
-#Now---------------
+#Final Solution
 question <- "Which countries have had the highest number of positive cases against the number of tests?"
 answer <- c("Positive tested cases" = positive_tested_top_3)
 
@@ -93,6 +92,3 @@ data_structure_list <- list(dataframe_list,vector_list,matrix_list)
 covid_analysis_list <- list(question,answer,data_structure_list)
 
 covid_analysis_list[[2]]
-
-#Link for sample solution 
-#https://github.com/dataquestio/solutions/blob/master/Mission505Solutions.Rmd
